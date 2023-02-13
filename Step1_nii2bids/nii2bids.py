@@ -18,12 +18,15 @@ if not os.path.exists(BIDSpath):
             os.mkdir(BIDSpath + new_name + '/' + 'anat')
             os.mkdir(BIDSpath + new_name + '/' + 'func')
 
-funcfile = glob.glob('/home/cuizaixu_lab/fanqingchen/DATA/data/HCPD/rsfMRI_20210514/*/MNINonLinear/Results/rfMRI_REST1_AP/*')
+funcfile = glob.glob('/home/cuizaixu_lab/fanqingchen/DATA/data/HCPD/rsfMRI_20210514/*/MNINonLinear/Results/rfMRI_REST1_AP/rfMRI_REST1_AP.nii.gz')
 for i in funcfile:
-    fname = i[62:73]
+    fname = i[62:72]
     funcName = 'sub-'+fname
     funcaimpath = BIDSpath+funcName+'/func/'
+    print('--i--', i)
+    print(funcaimpath+funcName+'_'+'task-rest'+'_bold.nii.gz')
     copy(i, funcaimpath+funcName+'_'+'task-rest'+'_bold.nii.gz')
+
     jsonStruc = {
         "RepetitionTime": 2,
         "SkullStripped": "false",
@@ -46,7 +49,7 @@ for i in T1wName:
 
     t1wfile = glob.glob('/home/cuizaixu_lab/fanqingchen/DATA/data/HCPD/sMRI_unprocessed_20210514/'+i+'/unprocessed/T1w_MPR_vNav_4e_e1e2_mean/*.nii.gz')
 
-    copy(t1wfile[0], t1aimpath+t1wname+'T1w.nii')
+    copy(t1wfile[0], t1aimpath+t1wname+'_T1w.nii.gz')
     jsonStruc = {'SkullStripped': 'false',
                  'Project': 'IPCASTest'}
     box = json.dumps(jsonStruc, indent=1)
