@@ -8,4 +8,4 @@
 #SBATCH -o /home/cuizaixu_lab/fanqingchen/DATA_C/Code/HCPDCode/Step3_WMFC/log/job.%j.out
 #SBATCH -e /home/cuizaixu_lab/fanqingchen/DATA_C/Code/HCPDCode/Step3_WMFC/log/job.%j.error.txt
 
-python /home/cuizaixu_lab/fanqingchen/DATA_C/Code/HCPDCode/Step3_WMFC/wmmaskresample.py
+python /home/cuizaixu_lab/fanqingchen/DATA_C/Code/HCPDCode/Step3_WMFC/step_1st_resamplewm.py
