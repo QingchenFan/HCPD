@@ -42,7 +42,7 @@ if [ ! -d $bids_root_dir_output_wd4singularity/derivatives/fmriprep/sub-HCD${sub
 fi
 
 #Run fmriprep
-export SINGULARITYENV_TEMPLATEFLOW_HOME=/home/cuizaixu_lab/fanqingchen/DATA/templateflow  #将templateflow加载到singularity_fmriprep
+export SINGULARITYENV_TEMPLATEFLOW_HOME=/home/cuizaixu_lab/fanqingchen/DATA/templateflow                             #将templateflow加载到singularity_fmriprep
 #修改python环境
 unset PYTHONPATH; singularity run --cleanenv -B $bids_root_dir_output_wd4singularity/derivatives/fmriprep/sub-HCD${subj}:/wd \
     -B $bids_root_dir:/inputbids \
