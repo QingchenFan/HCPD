@@ -17,12 +17,12 @@ Louwangzhiyu = ['sub-HCD1906457', 'sub-HCD2239247', 'sub-HCD2311633', 'sub-HCD22
        'sub-HCD2286155','sub-HCD2254243','sub-HCD2301428','sub-HCD2310328','sub-HCD2264549','sub-HCD2256651','sub-HCD2211932','sub-HCD2216437','sub-HCD2335344','sub-HCD2304737'
        ]  # "漏网之鱼"
 for i in subid:
-    wmdata = '/home/cuizaixu_lab/fanqingchen/DATA_C/data/HCPD/HCPD_BIDS/derivatives/fmriprep/'+i+'/fmriprep/'+i+'/anat/'+i+'_space-MNI152NLin2009cAsym_label-WM_probseg.nii.gz'
-    bolddata = '/home/cuizaixu_lab/fanqingchen/DATA_C/data/HCPD/HCPD_xcpd/derivatives/xcp_abcd/'+i+'/func/'+i+'_task-rest_space-MNI152NLin2009cAsym_desc-residual_smooth_bold.nii.gz'
+    wmdata = '/home/cuizaixu_lab/fanqingchen/DATA_C/data/HCPD/HCPD_BIDS/derivatives/fmriprep/'+i+'/fmriprep/'+i+'/anat/'+i+'_space-MNI152NLin6Asym_label-WM_probseg.nii.gz'
+    bolddata = '/home/cuizaixu_lab/fanqingchen/DATA_C/data/HCPD/HCPD_xcpd/derivatives/xcp_abcd/'+i+'/func/'+i+'_task-rest_space-MNI152NLin6Asym_desc-residual_smooth_bold.nii.gz'
     if not os.path.exists(wmdata) or not os.path.exists(bolddata):
         print(i)
         continue
-    outdata = resample_to_img(source_img=wmdata, target_img=bolddata)
-    nib.Nifti1Image(outdata.get_data(), outdata.affine, outdata.header).to_filename('/home/cuizaixu_lab/fanqingchen/DATA_C/data/HCPD/wmmask/resampleWM/'+i+'_space-MNI152NLin2009cAsym_label-resampleWM_probseg.nii.gz')
+    outdata = resample_to_img(source_img=wmdata, target_img=bolddata, interpolation='continuous')
+    nib.Nifti1Image(outdata.get_data(), outdata.affine, outdata.header).to_filename('/home/cuizaixu_lab/fanqingchen/DATA_C/data/HCPD/wmmask/resampleWM/'+i+'_space-MNI152NLin6Asym_label-WM_probseg.nii.gz')
 
 
