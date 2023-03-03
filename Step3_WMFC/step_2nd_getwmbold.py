@@ -64,6 +64,8 @@ for i in subid:
     resFC = np.corrcoef(roiMatrix)  # rowvar=False 列与列算相关；rowvar=False 行与行算相关
     savemat('/home/cuizaixu_lab/fanqingchen/DATA_C/data/HCPD/wmdata/wmFC/'+i+'_FC.mat', {'data': resFC})
 
+    # test
+
 
 
 
