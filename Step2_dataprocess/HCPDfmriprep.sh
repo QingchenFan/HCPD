@@ -4,16 +4,16 @@
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=8
 #SBATCH --mem-per-cpu 8G
-#SBATCH -p q_cn
-#SBATCH -o /home/cuizaixu_lab/fanqingchen/DATA/Res/fmriprep/job.%j.out
-#SBATCH -e /home/cuizaixu_lab/fanqingchen/DATA/Res/fmriprep/job.%j.error.txt
+#SBATCH -p q_fat_c
+#SBATCH -o /home/cuizaixu_lab/fanqingchen/DATA_C/Res/fmriprep/job.%j.out
+#SBATCH -e /home/cuizaixu_lab/fanqingchen/DATA_C/Res/fmriprep/job.%j.error.txt
 module load singularity/3.7.0
 
 
 #!/bin/bash
 #User inputs:
-bids_root_dir=/home/cuizaixu_lab/fanqingchen/DATA/data/HCPD/HCPD_BIDS
-bids_root_dir_output_wd4singularity=/home/cuizaixu_lab/fanqingchen/DATA/data/HCPD_tep_wk
+bids_root_dir=/home/cuizaixu_lab/fanqingchen/DATA_C/data/HCPD/HCPD_BIDS
+bids_root_dir_output_wd4singularity=/home/cuizaixu_lab/fanqingchen/DATA_C/data/HCPD_tep_wk
 
 mkdir $bids_root_dir_output_wd4singularity
 subj=$1
@@ -42,7 +42,7 @@ if [ ! -d $bids_root_dir_output_wd4singularity/derivatives/fmriprep/sub-HCD${sub
 fi
 
 #Run fmriprep
-export SINGULARITYENV_TEMPLATEFLOW_HOME=/home/cuizaixu_lab/fanqingchen/DATA/templateflow                             #将templateflow加载到singularity_fmriprep
+export SINGULARITYENV_TEMPLATEFLOW_HOME=/home/cuizaixu_lab/fanqingchen/DATA/templateflow
 #修改python环境
 unset PYTHONPATH; singularity run --cleanenv -B $bids_root_dir_output_wd4singularity/derivatives/fmriprep/sub-HCD${subj}:/wd \
     -B $bids_root_dir:/inputbids \

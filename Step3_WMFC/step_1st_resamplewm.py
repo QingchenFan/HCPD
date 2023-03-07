@@ -1,5 +1,3 @@
-
-
 import nibabel as nib
 import glob
 from nilearn.image import resample_to_img
