@@ -19,9 +19,9 @@ data = pd.DataFrame(np.round(mm, 2), columns=newlabel, index=newlabel)
 print(data)
 
 cx = sns.heatmap(data,
-                 xticklabels=True, yticklabels=True, cmap="Spectral", annot=False, linewidths=0.001
+                 xticklabels=True, yticklabels=True, cmap='Blues', annot=False,
                 #cbar_kws ={'format': '%.1f','ticks': [-1.0, 0.0, 1.0]}
-                )    # xticklabels/yticklabels x轴的titel
+                )    # xticklabels/yticklabels x轴的titel  "Spectral"
 cx.tick_params(labelsize=100, left=False, bottom=False)  # 控制去掉小刻度线
 cx.set_xticklabels(newlabel, fontsize=4, font='Arial')# x轴上字体大小
 cx.set_yticklabels(newlabel, fontsize=4, font='Arial')

@@ -14,6 +14,7 @@ Louwangzhiyu = ['sub-HCD1906457', 'sub-HCD2239247', 'sub-HCD2311633', 'sub-HCD22
        'sub-HCD2333340', 'sub-HCD2322335', 'sub-HCD2236140','sub-HCD2300426','sub-HCD2302430', 'sub-HCD2207840', 'sub-HCD2220428',
        'sub-HCD2286155','sub-HCD2254243','sub-HCD2301428','sub-HCD2310328','sub-HCD2264549','sub-HCD2256651','sub-HCD2211932','sub-HCD2216437','sub-HCD2335344','sub-HCD2304737'
        ]  # "漏网之鱼"
+subid = ['sub-HCD0383143']
 for i in subid:
     wmdata = '/home/cuizaixu_lab/fanqingchen/DATA_C/data/HCPD/HCPD_BIDS/derivatives/fmriprep/'+i+'/fmriprep/'+i+'/anat/'+i+'_space-MNI152NLin6Asym_label-WM_probseg.nii.gz'
     bolddata = '/home/cuizaixu_lab/fanqingchen/DATA_C/data/HCPD/HCPD_xcpd/derivatives/xcp_abcd/'+i+'/func/'+i+'_task-rest_space-MNI152NLin6Asym_desc-residual_smooth_bold.nii.gz'
