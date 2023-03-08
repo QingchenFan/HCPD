@@ -4,9 +4,8 @@ subid = pd.read_csv('/Users/fan/Documents/Data/HCPData/HCPDsubID.csv')
 allinfo = pd.read_csv('/Users/fan/Documents/Data/HCPData/behavior/flanker01.csv')
 
 allinfo = allinfo.drop([0])
-print(allinfo)
-
 allinfoid = list(allinfo['src_subject_id'])
+
 res = []
 besideid = []
 for i in subid['subID']:
@@ -19,8 +18,12 @@ for i in subid['subID']:
         score = allinfo.iloc[indexid+1, :]
         res.append(score)
     else:
-        print(i)
         besideid.append(i)
-print(len(besideid))
+
 label = pd.DataFrame(res)
 label.to_csv('flanker01_lable.csv')
+
+# 找出来有行为数据没有影像数据的被试
+test = ['sub-'+i for i in allinfoid if 'sub-'+i not in list(subid['subID'])]
+
+print(test, len(test))
