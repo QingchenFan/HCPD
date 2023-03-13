@@ -5,7 +5,7 @@
       <paths name="fanqingchen@10.12.100.88:22 password">
         <serverdata>
           <mappings>
-            <mapping deploy="/DATA_C/Code/HCPDCode" local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/DATA_C/Project/HCPD/code/HCPD" local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>

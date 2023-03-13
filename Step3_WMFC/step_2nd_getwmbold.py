@@ -8,7 +8,6 @@ subpath = '/home/cuizaixu_lab/fanqingchen/DATA_C/data/HCPD/HCPD_BIDS/derivatives
 subid = os.listdir(subpath)
 
 #subid = ['sub-HCD0001305', 'sub-HCD0008117', 'sub-HCD0021614']
-subid = ['sub-HCD0383143']
 for i in subid:
     #  对分割出的标准空间下的白质进行重采样，到全脑BOLD数据的大小、分辨率
     reslist = []

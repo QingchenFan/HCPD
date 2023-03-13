@@ -49,6 +49,7 @@ averageres_1 = sumdres / sumdres.shape[0]
 print('averageres_1-', averageres_1)
 print('averageres_1.shape-', averageres_1.shape)
 
+
 averageres_2 = sumdres_2 / sumdres_2.shape[0]
 print('averageres_2-', averageres_2)
 averageres_3 = sumdres_3 / sumdres_3.shape[0]
