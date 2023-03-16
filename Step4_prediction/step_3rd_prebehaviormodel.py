@@ -1,11 +1,6 @@
 #coding: utf-8
 import os
-import random
-import threading
-
 import numpy as np
-import nibabel as nib
-import glob
 import pandas as pd
 from sklearn import preprocessing
 from sklearn.cross_decomposition import PLSRegression
