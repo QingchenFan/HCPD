@@ -14,10 +14,10 @@ echo ""
 echo "Running fmriprep on participant: sub-HCD$1"
 echo ""
 module load singularity_xcp_abcd/0.0.4
-singularity run -B /home/cuizaixu_lab/fanqingchen/DATA_C/data/HCPD/HCPD_BIDS/derivatives/fmriprep/sub-HCD$1/fmriprep/:/data \
- -B /home/cuizaixu_lab/fanqingchen/DATA_C/data/HCPD/HCPD_xcpd/derivatives/:/out \
+singularity run -B /home/cuizaixu_lab/fanqingchen/DATA_C/data/HCPD/fmriprep_rest_no_MSM/sub-HCD$1:/data \
+ -B /home/cuizaixu_lab/fanqingchen/DATA_C/data/HCPD/HCPD_xcpd/:/out \
  -B /home/cuizaixu_lab/fanqingchen/.cache:/home/xcp_abcd/.cache \
  /home/cuizaixu_lab/wuguowei/DATA_C/aconda_envirment/xcp_abcd.sif \
  /data /out participant -w /out --participant_label HCD$1  \
- -p 24P --despike --lower-bpf 0.01 --upper-bpf 0.1
+ -p 24P --despike --lower-bpf 0.01 --upper-bpf 0.1 --smoothing
 

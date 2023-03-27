@@ -8,7 +8,7 @@
 #SBATCH -o /home/cuizaixu_lab/fanqingchen/DATA_C/Res/fmriprep/other/job.%j.out
 #SBATCH -e /home/cuizaixu_lab/fanqingchen/DATA_C/Res/fmriprep/other/job.%j.error.txt
 
-for file in $(ls /home/cuizaixu_lab/fanqingchen/DATA_C/data/HCPD/HCPD_BIDS/derivatives/fmriprep); do
+for file in $(ls /home/cuizaixu_lab/fanqingchen/DATA_C/data/HCPD/fmriprep_rest_no_MSM); do
 	echo "${file: 7: 13}";
-	sbatch xcpd_postprocess.sh ${file: 7: 13}
+	#sbatch xcpd_postprocess.sh ${file: 7: 13}
 done

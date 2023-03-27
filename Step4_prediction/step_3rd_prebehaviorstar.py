@@ -6,8 +6,9 @@ from datetime import datetime
 # sys.path.append('/home/cuizaixu_lab/fanqingchen/DATA/Code/PLSR_Prediction')
 def Setparameter(serverset, datapath, labelpath, covariatespath, parametersetting):
     '''
-      parameter setting
+    parameter setting
     :return:dict
+
 
     '''
     mark = parametersetting['mark']
@@ -119,11 +120,18 @@ def PLSc_RandomCV_MultiTimes(serverset, sersavepath, scriptpath, CVRepeatTimes, 
 
             os.system('sbatch ' + scriptfold + '/' + 'Time_' + str(i) + '_' + 'script.sh')
 
-
-# the path of saving file **
 datapath = '/home/cuizaixu_lab/fanqingchen/DATA_C/Project/HCPD/data/HCPDMori68FC.txt'  # feture matrix
 labelpath = '/home/cuizaixu_lab/fanqingchen/DATA_C/Project/HCPD/label/flanker01_label.csv'
 covariatespath = '/home/cuizaixu_lab/fanqingchen/DATA_C/Project/HCPD/label/covariates.csv'
+
+
+
+
+
+# the path of saving file **
+datapath = 'your data path'  # feture matrix
+labelpath = 'your label path'
+covariatespath = 'your covariates path'
 
 serverset = ['fanqingchen', 1, 1, 3, 10000, 'q_fat_c']   # name=fanqingchen | nodes=1 | ntasks=1| cpus-per-task=3 |mem-per-cpu=10000| -p q_fat_c
 

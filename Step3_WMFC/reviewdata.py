@@ -15,7 +15,6 @@ c = np.random.randint(1, 10, (5, 3, 2, 5))
 print('--c--\n', c)
 d = np.reshape(c, (5, 30))
 print('--d--\n', d)
-
 '''
     验证按索引取数
 '''
