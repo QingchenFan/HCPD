@@ -120,14 +120,11 @@ def PLSc_RandomCV_MultiTimes(serverset, sersavepath, scriptpath, CVRepeatTimes, 
 
             os.system('sbatch ' + scriptfold + '/' + 'Time_' + str(i) + '_' + 'script.sh')
 
-datapath = '/home/cuizaixu_lab/fanqingchen/DATA_C/Project/HCPD/data/HCPDMori68FC.txt'  # feture matrix
-labelpath = '/home/cuizaixu_lab/fanqingchen/DATA_C/Project/HCPD/label/flanker01_label.csv'
-covariatespath = '/home/cuizaixu_lab/fanqingchen/DATA_C/Project/HCPD/label/covariates.csv'
 
 
-
-
-
+# datapath = '/home/cuizaixu_lab/fanqingchen/DATA_C/Project/HCPD/data/HCPDMori68FC.txt'  # feture matrix
+# labelpath = '/home/cuizaixu_lab/fanqingchen/DATA_C/Project/HCPD/label/flanker01_label.csv'
+# covariatespath = '/home/cuizaixu_lab/fanqingchen/DATA_C/Project/HCPD/label/covariates.csv'
 # the path of saving file **
 datapath = 'your data path'  # feture matrix
 labelpath = 'your label path'
@@ -135,13 +132,13 @@ covariatespath = 'your covariates path'
 
 serverset = ['fanqingchen', 1, 1, 3, 10000, 'q_fat_c']                    # name=fanqingchen | nodes=1 | ntasks=1| cpus-per-task=3 |mem-per-cpu=10000| -p q_fat_c
 parametersetting = {
-       'permutation': 0,                # 1: Permutation test   0: no
-             'kfold': 2,                # number:KFold 0:no
+       'permutation': 0,           # 1: Permutation test   0: no
+             'kfold': 2,           # number:KFold 0:no
      'CVRepeatTimes': 1000,
               'mark': 'dataMark',
-    'CovariatesMark': 0,                # 1 :do   0: no
+    'CovariatesMark': 0,           # 1 :do   0: no
               'Time': 20230310,
-            'method': 'PLSR',
+            'method': 'PLSR',      #
      'Modelcodefile': 'Machinelearning_model.py'
     }
 
