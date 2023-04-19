@@ -115,6 +115,7 @@ def PLSPrediction_Model(data_list, dimention, weightpath, Permutation, kfold, da
 
         predict_model.fit(Subjects_Data_train, y_train)
         best_model = predict_model.best_estimator_
+
         #weight
         feature_weight = np.zeros([np.shape(X_train)[1], 1])
         for i, j in enumerate(predict_model.best_estimator_.estimators_):

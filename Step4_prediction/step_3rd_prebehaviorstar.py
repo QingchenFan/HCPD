@@ -130,7 +130,7 @@ datapath = 'your data path'  # feture matrix
 labelpath = 'your label path'
 covariatespath = 'your covariates path'
 
-serverset = ['fanqingchen', 1, 1, 3, 10000, 'q_fat_c']                    # name=fanqingchen | nodes=1 | ntasks=1| cpus-per-task=3 |mem-per-cpu=10000| -p q_fat_c
+serverset = ['fanqingchen', 1, 1, 3, 10000, 'q_fat_c']  # name=fanqingchen | nodes=1 | ntasks=1| cpus-per-task=3 |mem-per-cpu=10000| -p q_fat_c
 parametersetting = {
        'permutation': 0,           # 1: Permutation test   0: no
              'kfold': 2,           # number:KFold 0:no
@@ -138,8 +138,9 @@ parametersetting = {
               'mark': 'dataMark',
     'CovariatesMark': 0,           # 1 :do   0: no
               'Time': 20230310,
-            'method': 'PLSR',      #
-     'Modelcodefile': 'Machinelearning_model.py'
+           'meth`od': 'PLSR',      #
+         'dimention': 'General',
+     'Modelcodefile': 'step_3rd_prebehaviormodel.py'
     }
 
 spar = Setparameter(serverset, datapath, labelpath, covariatespath, parametersetting)

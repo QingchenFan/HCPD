@@ -60,5 +60,4 @@ unset PYTHONPATH; singularity run --cleanenv -B $bids_root_dir_output_wd4singula
     --output-spaces T1w MNI152NLin6Asym MNI152NLin2009cAsym  \
     --return-all-components \
     --notrack --verbose \
-    --fs-no-reconall \
-    --skip-bids-validation --debug all --stop-on-first-crash --use-syn-sdc --resource-monitor
+    --skip-bids-validation --debug all --stop-on-first-crash --use-syn-sdc --resource-monitor --cifti-output 91k
