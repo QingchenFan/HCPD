@@ -5,10 +5,15 @@
 #SBATCH --cpus-per-task=2
 #SBATCH --mem-per-cpu 2000
 #SBATCH -p q_cn
-#SBATCH -o /home/cuizaixu_lab/fanqingchen/DATA/Res/fmriprep/other/job.%j.out
-#SBATCH -e /home/cuizaixu_lab/fanqingchen/DATA/Res/fmriprep/other/job.%j.error.txt
+#SBATCH -o /home/cuizaixu_lab/fanqingchen/DATA_C/Res/fmriprep/job.%j.out
+#SBATCH -e /home/cuizaixu_lab/fanqingchen/DATA_C/Res/fmriprep/job.%j.error.txt
 
-for file in $(ls /home/cuizaixu_lab/fanqingchen/DATA/data/HCPD/HCPD_BIDS); do
-	echo "${file: 7: 13}";
-	sbatch HCPDfmriprep.sh ${file: 7: 13}
+for file in $(ls /home/cuizaixu_lab/fanqingchen/DATA_C/data/HCPD/HCPD_BIDS); do
+	echo "${file: 4: 13}";
+	sbatch HCPDfmriprepT1w.sh ${file: 4: 13}
 done
+
+#for file in $(ls /home/cuizaixu_lab/fanqingchen/DATA/data/HCPD/HCPD_BIDS); do
+#	echo "${file: 7: 13}";
+#	sbatch HCPDfmriprep.sh ${file: 7: 13}
+#done

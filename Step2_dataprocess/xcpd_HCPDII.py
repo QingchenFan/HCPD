@@ -2,16 +2,19 @@ from xcp_abcd import workflow
 from bids import BIDSLayout
 import sys
 def fmri_surface_post_process(subname):
-    fmri_prep_dir = '/ibmgpfs/cuizaixu_lab/fanqingchen/data/HCPD/fmriprep_rest_no_MSM/sub-' + subname
-    work_dir = '/ibmgpfs/cuizaixu_lab/fanqingchen/data/HCPD/HCPD_xcpd'
-    output_dir = '/ibmgpfs/cuizaixu_lab/fanqingchen/data/HCPD/HCPD_xcpd'
+    # fmri_prep_dir = '/ibmgpfs/cuizaixu_lab/fanqingchen/data/HCPD/fmriprep_rest_no_MSM/sub-' + subname
+    # work_dir = '/ibmgpfs/cuizaixu_lab/fanqingchen/data/HCPD/HCPD_xcpd'
+    # output_dir = '/ibmgpfs/cuizaixu_lab/fanqingchen/data/HCPD/HCPD_xcpd'
+    fmri_prep_dir = '/ibmgpfs/cuizaixu_lab/Public_Data/HCP_ALL_Family/processed_data/rest_fmriprep_no_MSM/fmriprep_REST1_NMSM/sub-' + subname
+    work_dir = '/ibmgpfs/cuizaixu_lab/fanqingchen/data/HCP/HCP_xcpd'
+    output_dir = '/ibmgpfs/cuizaixu_lab/fanqingchen/data/HCP/HCP_xcpd'
     layout = BIDSLayout(str(fmri_prep_dir), validate=False, derivatives=True)
     lower_bpf = 0.01
     upper_bpf = 0.1
     contigvol = 5
     bpf_order = 2
     cifti = False
-    task_id = 'REST2'
+    task_id = 'REST1'
     brain_template='MNI152NLin2009cAsym'
     motion_filter_order = 4
     motion_filter_type = 'fif'
