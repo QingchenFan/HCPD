@@ -7,13 +7,13 @@
 #SBATCH -p q_cn
 #SBATCH -o /home/cuizaixu_lab/fanqingchen/DATA_C/Project/HCPD/code/HCPD/Step2_dataprocess/Log/xcpd_log/job.%j.out
 #SBATCH -e /home/cuizaixu_lab/fanqingchen/DATA_C/Project/HCPD/code/HCPD/Step2_dataprocess/Log/xcpd_log/job.%j.error.txt
-
-#my_array=('sub-HCD2239247' 'sub-HCD2804151' 'sub-HCD1880465' 'sub-HCD1854767' 'sub-HCD1871969' 'sub-HCD2203933' 'sub-HCD1880162' 'sub-HCD2240030' 'sub-HCD1783366' 'sub-HCD2828569' 'sub-HCD1847972' 'sub-HCD2795479' 'sub-HCD1765970' 'sub-HCD2810954' 'sub-HCD2884377' 'sub-HCD2229547' 'sub-HCD2797584' 'sub-HCD2820351' 'sub-HCD1778474' 'sub-HCD2807460' 'sub-HCD1852056' 'sub-HCD2811552' 'sub-HCD2903759' 'sub-HCD2855875' 'sub-HCD2236140' 'sub-HCD2207840' 'sub-HCD2220428' 'sub-HCD1863465' 'sub-HCD2884175' 'sub-HCD1796577' 'sub-HCD1845160' 'sub-HCD2174649' 'sub-HCD2254243' 'sub-HCD2832863' 'sub-HCD2863975' 'sub-HCD2860262' 'sub-HCD2901654' 'sub-HCD2879788' 'dataset_description.json' 'sub-HCD2264549' 'sub-HCD1886275' 'sub-HCD2801852' 'sub-HCD2833461' 'sub-HCD1794977' 'sub-HCD2164242' 'sub-HCD1791163' 'sub-HCD2256651' 'sub-HCD2211932' 'sub-HCD1801140' 'sub-HCD1855365' 'sub-HCD2856170' 'sub-HCD2163644' 'sub-HCD1856468' 'sub-HCD2897184' 'sub-HCD1762661' 'sub-HCD1787677' 'sub-HCD1785572' 'sub-HCD2864270' 'sub-HCD1870159' 'sub-HCD2878382' 'sub-HCD1778070' 'sub-HCD1872971' 'sub-HCD1881164' 'sub-HCD2181848' 'sub-HCD1886477' 'sub-HCD2812352')
-#for fruit in "${my_array[@]}"
-#do
-#  echo "$fruit"
-#  sbatch makemaskref.sh $fruit
-#done
+# 漏网之鱼
+my_array=('sub-HCD1196553' 'sub-HCD1723651' 'sub-HCD1609148' 'sub-HCD1656359' 'sub-HCD1514945' 'sub-HCD1215632' 'sub-HCD1543851' 'sub-HCD1168245' 'sub-HCD1496767' 'sub-HCD1633751' 'sub-HCD1756060' 'sub-HCD1610436' 'sub-HCD1685164' 'sub-HCD1502635' 'sub-HCD1681257' 'sub-HCD1237844' 'sub-HCD1131222' 'sub-HCD1701338' 'sub-HCD1162334' 'sub-HCD1156036' 'sub-HCD1197757' 'sub-HCD1565356' 'sub-HCD1647863' 'sub-HCD1686267' 'sub-HCD1493761' 'sub-HCD1411632' 'sub-HCD1363546' 'sub-HCD1504437' 'sub-HCD1757062' 'sub-HCD1223934' 'sub-HCD1435646' 'sub-HCD1578365'  'sub-HCD1612844' 'sub-HCD1410933' 'sub-HCD1646154' 'sub-HCD1239343' 'sub-HCD1262136' 'sub-HCD1664762' 'sub-HCD1518448' 'sub-HCD1205326' 'sub-HCD1534244' 'sub-HCD1490048' 'sub-HCD1594767' 'sub-HCD1231832' 'sub-HCD1411935' 'sub-HCD1400728' 'sub-HCD1433743' 'sub-HCD1571351' 'sub-HCD1658969' 'sub-HCD1612238' 'sub-HCD1663053' 'sub-HCD1491252' 'sub-HCD1187653' 'sub-HCD1756262' 'sub-HCD1714852' 'sub-HCD1227740' 'sub-HCD1643855' 'sub-HCD1396662' 'sub-HCD1522338' 'sub-HCD1129235' 'sub-HCD1111822' 'sub-HCD1590860' 'sub-HCD1409342')
+for fruit in "${my_array[@]}"
+do
+  echo "$fruit"
+  sbatch makemaskref.sh $fruit
+done
 
 #--HCPD--
 #for file in $(ls /home/cuizaixu_lab/fanqingchen/DATA_C/data/HCPD/fmriprep_rest_no_MSM); do
@@ -22,7 +22,7 @@
 #done
 
 #--HCP--
-for file in $(ls /home/cuizaixu_lab/fanqingchen/DATA_C/data/HCP/fmriprep_REST1_NMSM); do
-	echo $file;
-  sbatch makemaskref.sh $file
-done
+#for file in $(ls /home/cuizaixu_lab/fanqingchen/DATA_C/data/HCP/fmriprep_REST1_NMSM); do
+#	echo $file;
+#  sbatch makemaskref.sh $file
+#done
