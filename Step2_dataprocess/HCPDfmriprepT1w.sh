@@ -1,20 +1,19 @@
 #!/bin/bash
-#SBATCH --job-name=fanqingchen
+#SBATCH --job-name=HCPfmriprep
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
-#SBATCH --cpus-per-task=3
+#SBATCH --cpus-per-task=4
 #SBATCH --mem-per-cpu 8G
-#SBATCH -p q_fat_c
-#SBATCH -q high_c
-#SBATCH -o /home/cuizaixu_lab/fanqingchen/DATA_C/Res/fmriprep/job.%j.out
-#SBATCH -e /home/cuizaixu_lab/fanqingchen/DATA_C/Res/fmriprep/job.%j.error.txt
+#SBATCH -p q_cn
+#SBATCH -o /home/cuizaixu_lab/fanqingchen/DATA_C/Res/hcpfmriprep/job.%j.out
+#SBATCH -e /home/cuizaixu_lab/fanqingchen/DATA_C/Res/hcpfmriprep/job.%j.error.txt
 module load singularity/3.7.0
 
 
 #!/bin/bash
 #User inputs:
-bids_root_dir=/home/cuizaixu_lab/fanqingchen/DATA_C/data/HCPD/HCPD_BIDS
-bids_root_dir_output_wd4singularity=/home/cuizaixu_lab/fanqingchen/DATA_C/data/HCPD_tep_wk
+bids_root_dir=/ibmgpfs/cuizaixu_lab/fanqingchen/data/HCP/fmriprep_REST1_NMSM
+bids_root_dir_output_wd4singularity=/ibmgpfs/cuizaixu_lab/fanqingchen/data/HCP/HCP_tep_wk
 
 mkdir $bids_root_dir_output_wd4singularity
 subj=$1

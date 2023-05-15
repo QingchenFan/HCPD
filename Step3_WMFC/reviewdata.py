@@ -34,7 +34,7 @@ print('dres-\n', dres)
 print('dres2-\n', dres_2)
 print('dres3-\n', dres_3)
 
-
+exit()
 sumdres = np.sum(dres, axis=1)
 sumdres_2 = np.sum(dres_2, axis=1)
 sumdres_3 = np.sum(dres_3, axis=1)
